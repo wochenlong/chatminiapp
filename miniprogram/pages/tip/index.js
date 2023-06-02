@@ -17,7 +17,14 @@ Page({
   },
   // 发送消息
   sendMessage: function() {
-    let content = this.data.inputValue; // 获取输入框的值
+    let content = this.data.inputValue.trim(); // 获取输入框的值并去除首尾空格
+    if (!content) { // 判断输入框的值是否为空
+      wx.showToast({
+        title: '输入不能为空',
+        icon: 'none'
+      });
+      return;
+    }
     let chatList = this.data.chatList;
     chatList.push({
       content: content,
@@ -44,15 +51,28 @@ Page({
           toView: 'msg-' + (chatList.length -1) // 滚动到最新消息
         });
       }
-      
-      
     });
-    
   },
+  
   // 绑定输入框输入事件，实时获取输入框的值
   bindKeyInput: function(e) {
     this.setData({
       inputValue: e.detail.value
     });
   },
+  clearChatList: function() {
+    this.setData({
+      chatList: [],
+      usrid: ''
+    });
+    // 重新生成8位随机数字作为usrid
+    let usrid = '';
+    for (let i = 0; i < 8; i++) {
+      usrid += Math.floor(Math.random() * 10);
+    }
+    this.setData({
+      usrid: usrid
+    });
+  }
+  
 });
