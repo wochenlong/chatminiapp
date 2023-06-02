@@ -1,0 +1,15 @@
+<view class='cover'>
+  <image src="../../images/logo.png" class='logo'/>
+</view>
+<view class='title'>嗨我是广小海</view>
+<view class='desc'>这里是绘画屋2.0版本</view>
+<view class="choose">
+
+  <navigator class="join" url="/pages/tip/index" >开始聊天</navigator>
+  <navigator class="join" url="/pages/group/index" bindtap="changeColor">点一下</navigator>
+  <navigator class="join" url="/pages/form/index" bindtap="gotoChat">我的资料</navigator>
+  <view animation="{{scaleAnimation}}">
+    <button bindtap="onTapButton" style="{{buttonStyle}}">聊起来：{{power}}</button>
+  </view>
+  <view class="daily-sentence">{{dailySentence}}</view>
+</view>
