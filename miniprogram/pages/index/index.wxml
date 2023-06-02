@@ -1,15 +1,17 @@
-<view class='cover'>
-  <image src="../../images/logo.png" class='logo'/>
-</view>
-<view class='title'>嗨我是广小海</view>
-<view class='desc'>这里是绘画屋2.0版本</view>
-<view class="choose">
-
-  <navigator class="join" url="/pages/tip/index" >开始聊天</navigator>
-  <navigator class="join" url="/pages/group/index" bindtap="changeColor">点一下</navigator>
-  <navigator class="join" url="/pages/form/index" bindtap="gotoChat">我的资料</navigator>
-  <view animation="{{scaleAnimation}}">
-    <button bindtap="onTapButton" style="{{buttonStyle}}">聊起来：{{power}}</button>
+<view class="body">
+  <button formType="reset" bindtap="clearChatList">重置对话</button>
+  <view class="chat-wrapper">
+    <scroll-view scroll-y="true" class="chat-list" scroll-into-view="{{toView}}" style="padding-bottom: 100rpx;">
+      <block wx:for="{{chatList}}" wx:key="index">
+        <view class="chat-item" id="msg-{{index}}">
+          <view class="chat-content {{item.isAI ? 'ai' : 'user'}}">{{item.content}}</view>
+        </view>
+      </block>
+    </scroll-view>
   </view>
-  <view class="daily-sentence">{{dailySentence}}</view>
+
+  <view class="btn">
+    <input class="input" type="text" placeholder="{{info}}" value="{{inputValue}}" bindinput="bindKeyInput" />
+    <button size="mini" type="primary" formType="submit" bindtap="sendMessage">发送</button>
+  </view>
 </view>
