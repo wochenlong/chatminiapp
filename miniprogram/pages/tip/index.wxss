@@ -10,7 +10,7 @@
 .input {
   margin: 30rpx 0;
   border-bottom: 1px solid #666;
-  padding: 20rpx 0;
+  padding: 5rpx 0;
   width: 100%;
 }
 .mg {
@@ -22,4 +22,125 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.section {
+  padding: 20rpx;
+}
+
+.title {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+
+.chat-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.chat-list {
+  height: 100%;
+}
+
+.chat-item {
+  margin: 20rpx;
+}
+
+
+.chat-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.chat-list {
+  height: 100%;
+}
+
+.chat-item {
+  margin: 20rpx;
+}
+
+.chat-content {
+  padding: 10rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  max-width: 70%;
+}
+
+.chat-content.user {
+  background-color: #b7e1cd;
+  color: #000;
+  display: inline-block;
+  position: relative;
+}
+
+.chat-content.user::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #b7e1cd;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+
+.chat-content.ai {
+  background-color: #f2f2f2;
+}
+
+
+
+.area button {
+  font-size: 28rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+  background-color: #4caf50;
+  color: #fff;
+  margin: 0 auto;
+  display: block;
+}
+
+
+.btn {
+  width: 90%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn button {
+  width: 40%;
+  height:40%;
+  font-size: 20rpx;
+  padding: 10rpx 10rpx;
+  border-radius: 10rpx;
+  background-color: #4caf50;
+  color: #fff;
+  margin: 0 10rpx;
+}
+
+.btn button[type="primary"] {
+  margin-right: 20rpx;
+}
+
+.btn-group {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 50rpx;
 }
