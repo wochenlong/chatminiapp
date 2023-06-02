@@ -33,8 +33,19 @@ Page({
     wx.request({
       url: 'https://api.chat.t4wefan.pub/chatglm?usrid=' + that.data.usrid + '&source=glmmini&msg=' + content,
       method: 'GET',
-      success(res) { let chatList = that.data.chatList; chatList.push({ content: res.data.text, isAI: true }); // 将AI返回的消息添加到聊天记录列表中 that.setData({ chatList: chatList, toView: 'msg-' + (chatList.length -1) // 滚动到最新消息 }); console.log(res.data); // 打印API返回的数据到控制台上 wx.showToast({ title: res.data.text, // 将API返回的数据展示在页面上 icon: 'none’, duration: 2000 }); }
+      success: function(response) {
+        let chatList = that.data.chatList;
+        chatList.push({
+          content: response.data,
+          isAI: true
+        }); // 将API返回的消息添加到聊天记录列表中
+        that.setData({
+          chatList: chatList,
+          toView: 'msg-' + (chatList.length -1) // 滚动到最新消息
+        });
       }
+      
+      
     });
     
   },
