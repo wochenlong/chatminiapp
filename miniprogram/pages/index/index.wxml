@@ -4,14 +4,13 @@
     <scroll-view scroll-y="true" class="chat-list" scroll-into-view="{{toView}}" style="padding-bottom: 100rpx;">
       <block wx:for="{{chatList}}" wx:key="index">
         <view class="chat-item" id="msg-{{index}}">
-          <view class="chat-content {{item.isAI ? 'ai' : 'user'}}">{{item.content}}</view>
+          <view class="chat-content {{item.isAI ? 'ai' : 'user'}} {{item.isAI ? 'ai-content' : 'user-content'}}" data-content="{{item.content}}" bind:longpress="onCopyContent">{{item.content}}</view>
         </view>
       </block>
     </scroll-view>
   </view>
-
   <view class="btn">
-    <input class="input" type="text" placeholder="{{info}}" value="{{inputValue}}" bindinput="bindKeyInput" />
-    <button size="mini" type="primary" formType="submit" bindtap="sendMessage">发送</button>
-  </view>
+  <textarea class="input" placeholder="{{info}}" value="{{inputValue}}" bindinput="bindKeyInput" maxlength="1500" rows="4" cols="40"></textarea>
+  <button size="mini" type="primary" formType="submit" bindtap="sendMessage">发送</button>
+</view>
 </view>
