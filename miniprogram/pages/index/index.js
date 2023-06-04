@@ -16,7 +16,22 @@ Page({
       url: '/pages/form/index',
     });
   },
-
+  onSignIn() {
+    if (this.data.isSignedIn) {
+      wx.showToast({
+        title: '当前已经签过到了',
+        icon: 'none',
+      });
+    } else {
+      this.setData({
+        isSignedIn: true,
+      });
+      wx.showToast({
+        title: '签到成功',
+        icon: 'success',
+      });
+    }
+  },
 
 
   vibrateDevice() {
