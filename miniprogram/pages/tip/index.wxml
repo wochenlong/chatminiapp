@@ -1,17 +1,18 @@
 <view class="body">
+  <preset wx:if="{{hasPreset}}" />
+  <button type="button"  class="green-button"     bindtap="showDemo">对话示范</button>
   <button formType="reset" bindtap="clearChatList">重置对话</button>
   <view class="chat-wrapper">
     <scroll-view scroll-y="true" class="chat-list" scroll-into-view="{{toView}}" style="padding-bottom: 100rpx;">
       <block wx:for="{{chatList}}" wx:key="index">
         <view class="chat-item" id="msg-{{index}}">
-  <view class="chat-content {{item.isAI ? 'ai' : 'user'}}">{{item.content}}</view>
-</view>
+          <view class="chat-content {{item.isAI ? 'ai' : 'user'}} {{item.isAI ? 'ai-content' : 'user-content'}}" data-content="{{item.content}}" bind:longpress="onCopyContent">{{item.content}}</view>
+        </view>
       </block>
     </scroll-view>
-    <view class="btn">
-      <textarea style="height:100rpx" class="input" name="info" placeholder="{{info}}" bindinput="bindKeyInput" value="{{inputValue}}" />
-      <button style="margin: 30rpx 0" type="primary" formType="submit" bindtap="sendMessage">发送</button>
-     
-    </view>
+  </view>
+  <view class="btn">
+    <textarea class="input" placeholder="{{info}}" value="{{inputValue}}" bindinput="bindKeyInput" maxlength="1500" rows="4" cols="40"></textarea>
+    <button size="mini" type="primary" formType="submit" bindtap="sendMessage">发送</button>
   </view>
 </view>
