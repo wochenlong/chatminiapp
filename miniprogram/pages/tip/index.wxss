@@ -7,12 +7,7 @@
 .title {
   font-size: 36rpx;
 }
-.input {
-  margin: 30rpx 0;
-  border-bottom: 1px solid #666;
-  padding: 5rpx 0;
-  width: 100%;
-}
+
 .mg {
   margin: 30rpx 0;
 }
@@ -98,6 +93,18 @@
 .chat-content.ai {
   background-color: #f2f2f2;
 }
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+.separator {
+  width: 2rpx;
+  height: 40rpx;
+  background-color: #ccc;
+  margin: 0 20rpx;
+}
 
 
 
@@ -124,8 +131,9 @@
 }
 
 .btn button {
-  width: 40%;
-  height:40%;
+  width: 25%;
+  height: 50px;
+  height:60%;
   font-size: 20rpx;
   padding: 10rpx 10rpx;
   border-radius: 10rpx;
@@ -143,4 +151,39 @@
   display: flex;
   flex-direction: column;
   gap: 50rpx;
+}
+.btn-green {
+  background-color: #00CD00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.input {
+  flex: 1;
+  height: 30px;
+  line-height: 40px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  font-size: 16px;
+}
+.green-button {
+  background-color: #1AAD19; /* 绿色背景 */
+  color: #FFFFFF; /* 白色文字 */
+  border: none; /* 去除边框 */
+  border-radius: 4px; /* 圆角 */
+  padding: 10px 20px; /* 内边距 */
+  font-size: 16px; /* 字体大小 */
 }
