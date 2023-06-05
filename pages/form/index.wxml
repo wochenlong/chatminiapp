@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="section">
+    <text class="title">关于我们</text>
+  </view>
+  <view class="section">
+    <text>1. 本小程序使用ChatGLM模型目的仅供学习和交流，遵守model license，不涉及任何商业用途，也没有任何收费项目。</text>
+  </view>
+  <view class="section">
+    <text>2. 该模型与ChatGPT有所不同，更多详情请访问原模型的GitHub地址：</text>
+    <navigator url="https://github.com/THUDM/ChatGLM-6B" class="link">https://github.com/THUDM/ChatGLM-6B</navigator>
+  </view>
+  <view class="section">
+    <text>3. 如有任何问题或建议，请联系我们的作者：</text>
+    <text class="email">oulongchen273@outlook.com</text>
+  </view>
+  <view class="section">
+    <text>4. 本小程序仅为学习和交流而设，使用本小程序产生的一切后果由用户自行承担，作者不承担任何责任。</text>
+  </view>
+  <view class="section">
+    <text>5. 本小程序非常重视用户隐私安全，当前版本聊天记录仅保留在前端界面，不会收集任何敏感信息。我们遵循微信小程序官方规定，提供稳定安全的服务。</text>
+  </view>
+</view>

@@ -1,0 +1,189 @@
+.body {
+  margin: 40rpx;
+}
+.section {
+  margin: 40rpx 0 80rpx;
+}
+.title {
+  font-size: 36rpx;
+}
+
+.mg {
+  margin: 30rpx 0;
+}
+.area {
+  margin: 100rpx auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.section {
+  padding: 20rpx;
+}
+
+.title {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+
+.chat-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.chat-list {
+  height: 100%;
+}
+
+.chat-item {
+  margin: 20rpx;
+}
+
+
+.chat-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.chat-list {
+  height: 100%;
+}
+
+.chat-item {
+  margin: 20rpx;
+}
+
+.chat-content {
+  padding: 10rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  max-width: 70%;
+}
+
+.chat-content.user {
+  background-color: #b7e1cd;
+  color: #000;
+  display: inline-block;
+  position: relative;
+}
+
+.chat-content.user::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #b7e1cd;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+
+.chat-content.ai {
+  background-color: #f2f2f2;
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+.separator {
+  width: 2rpx;
+  height: 40rpx;
+  background-color: #ccc;
+  margin: 0 20rpx;
+}
+
+
+
+.area button {
+  font-size: 28rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+  background-color: #4caf50;
+  color: #fff;
+  margin: 0 auto;
+  display: block;
+}
+
+
+.btn {
+  width: 90%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn button {
+  width: 25%;
+  height: 50px;
+  height:60%;
+  font-size: 20rpx;
+  padding: 10rpx 10rpx;
+  border-radius: 10rpx;
+  background-color: #4caf50;
+  color: #fff;
+  margin: 0 10rpx;
+}
+
+.btn button[type="primary"] {
+  margin-right: 20rpx;
+}
+
+.btn-group {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 50rpx;
+}
+.btn-green {
+  background-color: #00CD00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.input {
+  flex: 1;
+  height: 30px;
+  line-height: 40px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  font-size: 16px;
+}
+.green-button {
+  background-color: #1AAD19; /* 绿色背景 */
+  color: #FFFFFF; /* 白色文字 */
+  border: none; /* 去除边框 */
+  border-radius: 4px; /* 圆角 */
+  padding: 10px 20px; /* 内边距 */
+  font-size: 16px; /* 字体大小 */
+}

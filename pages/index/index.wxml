@@ -1,0 +1,14 @@
+<view class='cover'>
+  <image src="../../images/logo.png" class='logo'/>
+</view>
+<view class='title'>嗨，我是广小海</view>
+<view class='desc'>这里是小程序1.3.5版本</view>
+<view class="choose">
+  <navigator class="join" url="/pages/tip/index" >开始聊天</navigator>
+  <navigator class="join" url="/pages/group/index" bindtap="onSignIn" >签到</navigator>
+  <navigator class="join" url="/pages/form/index" bindtap="gotoChat">关于我们</navigator>
+  <view animation="{{scaleAnimation}}">
+    <button bindtap="onTapButton" style="{{buttonStyle}}">聊起来：{{power}}</button>
+  </view>
+  <view class="daily-sentence">{{dailySentence}}</view>
+</view>
