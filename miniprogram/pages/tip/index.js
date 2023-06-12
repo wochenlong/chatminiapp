@@ -5,10 +5,17 @@ Page({
     inputValue: "", // 输入框的值
     toView: "", // 滚动到的位置
     usrid: "", // 用户ID
+    personalityOptions: [
+      { name: '默认', value: 'moren' },
+      { name: '猫娘', value: 'cat' },
+  
+      { name: '洛天依', value: 'luotianyi' },
+    
+    ],
+    showPersonalityMenu: false,  // 是否显示人设选项
+    selectedPersonality: '',  // 当前选中的人设
   },
 
-
-  
   onLoad: function () {
     // 生成8位随机数字作为usrid
     let usrid = "";
@@ -147,6 +154,83 @@ Page({
       }); // 提示用户是否发送"clear"消息
     });
   },
+
+  showPersonalityMenu: function() {
+    this.setData({
+      showPersonalityMenu: !this.data.showPersonalityMenu
+    });
+  },
+  selectPersonality: function (e) {
+    let index = e.currentTarget.dataset.index;
+    let personalityOptions = this.data.personalityOptions;
+    let selectedPersonality = personalityOptions[index].value;
+    this.setData({
+      selectedPersonality: selectedPersonality,
+      showPersonalityMenu: false,
+    });
+  
+    // 根据选中的人设自动设置输入框的值，并调用 sendPreset 函数
+    switch (selectedPersonality) {
+      case 'cat':
+        this.setData({
+          preset: '我是猫娘',
+        });
+        this.sendPreset();
+        break;
+      case 'luotianyi':
+        this.setData({
+          preset: '我是洛天依',
+        });
+        this.sendPreset();
+        break;
+      default:
+        break;
+    }
+  },
+  sendPreset: function() {
+    let preset = this.data.preset;
+    if (!preset) {
+      return;
+    }
+  
+    let chatList = this.data.chatList;
+    chatList.pop(); // 移除用户发送的人设信息
+    chatList.push({
+      content: "人设加载中...",
+      isAI: true,
+    });
+    this.setData({
+      chatList: chatList,
+      toView: "msg-" + (chatList.length - 1),
+    });
+  
+    wx.request({
+      url:
+        "https://api.chat.t4wefan.pub/chatglm?usrid=" +
+        this.data.usrid +
+        "&source=glmmini&msg=" +
+        preset,
+      method: "GET",
+      success: function (response) {
+        chatList.pop(); // 移除“人设加载中”的提示
+        chatList.push({
+          content: response.data,
+          isAI: true,
+        });
+        this.setData({
+          chatList: chatList,
+          toView: "msg-" + (chatList.length - 1),
+        });
+      }.bind(this),
+    });
+  },
+  hidePersonalityMenu: function() {
+    this.setData({
+      showPersonalityMenu: false
+    });
+  },
+  
+
   showDemo: function () {
     let messages = [
       "我要你扮演诗人。你将创作出能唤起情感并具有触动人心的力量的诗歌。写任何主题或主题，但要确保您的文字以优美而有意义的方式传达您试图表达的感觉。您还可以想出一些短小的诗句，这些诗句仍然足够强大，可以在读者的脑海中留下印记。我的第一个请求是“我需要一首关于爱情的诗”。",
