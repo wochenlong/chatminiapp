@@ -1,5 +1,15 @@
 <view class="body">
+  <button type="button" class="select-personality-btn" bindtap="showPersonalityMenu">选择人设</button>
+  <view class="personality-menu {{showPersonalityMenu ? 'show-menu' : ''}}">
+    <block wx:for="{{personalityOptions}}" wx:key="index">
+      <view class="personality-option {{selectedPersonality === item.value ? 'selected' : ''}}" data-index="{{index}}" bindtap="selectPersonality">
+        <view class="option-text">{{item.name}}</view>
+        <view class="option-status {{selectedPersonality === item.value ? 'selected' : ''}}"></view>
+      </view>
+    </block>
+  </view>
   <preset wx:if="{{hasPreset}}" />
+
   <div class="button-container">
   <button type="button" class="black-button small-btn" bindtap="showDemo">对话示范</button>
   <button formType="reset" class="black-button small-btn" bindtap="clearChatList">重置对话</button>
