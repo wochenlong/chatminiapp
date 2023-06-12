@@ -188,3 +188,54 @@
   display: flex;
   justify-content: space-between;
 }
+
+.select-personality-btn {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+}
+
+.personality-menu {
+  position: fixed;
+  top:30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  z-index: 999;
+}
+
+.personality-menu.show-menu {
+  display: block;
+}
+
+.personality-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+}
+
+.personality-option .option-text {
+  flex: 1;
+}
+
+.personality-option .option-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.personality-option .option-status.selected {
+  background-color: #3CB371;
+}
+
